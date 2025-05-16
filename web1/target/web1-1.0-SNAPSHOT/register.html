@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<div class="form-container">
+    <h1 class="page-title">用户注册</h1>
+    <form action="/register" method="post">
+        <div class="form-group">
+            <label for="username">用户名：</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label>性别：</label>
+            <label><input type="radio" name="gender" value="male" required> 男</label>
+            <label><input type="radio" name="gender" value="female"> 女</label>
+        </div>
+        <div class="form-group">
+            <label for="birthday">生日：</label>
+            <input type="date" id="birthday" name="birthday">
+        </div>
+        <div class="form-group">
+            <label for="hometown">籍贯：</label>
+            <input list="provinces" id="hometown" name="hometown">
+            <datalist id="provinces">
+                <option value="北京市">
+                <option value="天津市">
+                <option value="上海市">
+                <option value="重庆市">
+                <option value="河北省">
+                <option value="山西省">
+                <option value="辽宁省">
+                <option value="吉林省">
+                <option value="黑龙江省">
+                <option value="江苏省">
+                <option value="浙江省">
+                <option value="安徽省">
+                <option value="福建省">
+                <option value="江西省">
+                <option value="山东省">
+                <option value="河南省">
+                <option value="湖北省">
+                <option value="湖南省">
+                <option value="广东省">
+                <option value="海南省">
+                <option value="四川省">
+                <option value="贵州省">
+                <option value="云南省">
+                <option value="陕西省">
+                <option value="甘肃省">
+                <option value="青海省">
+                <option value="台湾省">
+                <option value="内蒙古自治区">
+                <option value="广西壮族自治区">
+                <option value="西藏自治区">
+                <option value="宁夏回族自治区">
+                <option value="新疆维吾尔自治区">
+                <option value="香港特别行政区">
+                <option value="澳门特别行政区">
+            </datalist>
+        </div>
+        <div class="form-group">
+            <label for="education">学历：</label>
+            <select id="education" name="education">
+                <option value="">请选择</option>
+                <option value="学士" selected>学士</option>
+                <option value="硕士">硕士</option>
+                <option value="博士">博士</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>喜欢的课程：</label>
+            <label><input type="checkbox" name="course" value="Web开发技术" checked> Web开发技术</label>
+            <label><input type="checkbox" name="course" value="Java语言程序设计"> Java语言程序设计</label>
+            <label><input type="checkbox" name="course" value="数据库原理"> 数据库原理</label>
+            <label><input type="checkbox" name="course" value="系统分析与测试"> 系统分析与测试</label>
+        </div>
+        <div class="form-group">
+            <label for="photo">照片：</label>
+            <input type="file" id="photo" name="photo" accept="image/*">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="submit-btn">提交</button>
+            <button type="reset" class="reset-btn">重置</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
