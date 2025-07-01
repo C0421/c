@@ -1,0 +1,140 @@
+/* ------------- 基础样式 ------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.5;
+    color: #333;
+}
+
+.area {
+    padding: 1rem;
+    border: 1px solid #e9ecef;
+    background-color: #fff;
+    border-radius: 0.375rem; /* 对应Bootstrap的圆角 */
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075); /* 轻微阴影 */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.75rem; /* 栅格系统 gutter */
+}
+
+.col-md-1 { width: 8.333333%; }
+.col-md-2 { width: 16.666667%; }
+.col-md-3 { width: 25%; }
+.col-md-4 { width: 33.333333%; }
+.col-md-5 { width: 41.666667%; }
+.col-md-6 { width: 50%; }
+.col-md-7 { width: 58.333333%; }
+.col-md-8 { width: 66.666667%; }
+.col-md-9 { width: 70%; }
+.col-md-10 { width: 83.333333%; }
+.col-md-11 { width: 91.666667%; }
+.col-md-12 { width: 100%; }
+
+/* 列内边距 */
+[class*="col-md-"] {
+    padding: 0 0.75rem;
+}
+
+
+/* ------ 导航栏样式 ------- */
+.nav {
+    width: 100%;
+    background-color: #007bff; /* Bootstrap主色 */
+    border-radius: 0.375rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,123,255,0.15); /* 导航栏阴影 */
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0; /* 移除列表默认边距 */
+}
+
+.nav-list-link {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.75rem 1.5rem; /* 标准导航栏内边距 */
+    font-weight: 500;
+    transition: all 0.3s ease; /* 平滑过渡 */
+}
+
+.nav-list-link:hover {
+    background-color: #0056b3; /* 悬停深色 */
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-item-right {
+    margin-left: auto; /* 右对齐 */
+}
+
+
+/*-------------- 侧边栏 ------------ */
+.sidebar {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    margin-top: 1.5rem; /* 与主内容间距 */
+}
+
+.sidebar-group {
+    margin-bottom: 1.5rem;
+    border-radius: 0.375rem;
+    overflow: hidden; /* 圆角裁切 */
+}
+
+.sidebar-group-title {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-bottom: 2px solid #0056b3; /* 标题底部边框 */
+}
+
+.sidebar-group-list {
+    list-style: none;
+}
+
+.sidebar-group-list-link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar-group-list-link:hover {
+    background-color: #e9f5ff; /* 悬停浅色背景 */
+    color: #007bff;
+    padding-left: 1.75rem; /* 悬停内边距微调 */
+    transform: none; /* 移除原有缩放，改用Bootstrap风格 */
+}
+
+
+/*-------------- 页脚 ------------ */
+.footer {
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+    background-color: #f8f9fa; /* Bootstrap浅背景 */
+    border-top: 1px solid #e9ecef;
+}
+
+.footer p {
+    margin-bottom: 0;
+    color: #6c757d; /* 浅灰色文字 */
+}

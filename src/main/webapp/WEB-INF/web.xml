@@ -1,0 +1,50 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <display-name>NEFU Software Engineering Website</display-name>
+
+    <!-- 1. 所有 Filter 定义 -->
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>de.nefu.software.filter.CharacterEncodingFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>de.nefu.software.filter.AuthFilter</filter-class>
+    </filter>
+
+    <!-- 2. 所有 Filter 映射 -->
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/api/news/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 3. 所有 Servlet 定义 -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>de.nefu.software.servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewsApiServlet</servlet-name>
+        <servlet-class>de.nefu.software.servlet.NewsApiServlet</servlet-class>
+    </servlet>
+
+    <!-- 4. 所有 Servlet 映射 -->
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+        <!-- (备注) 如果您有独立的login.jsp, 这里的/api/login是给JS用的，JSP的form应该指向另一个Servlet -->
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewsApiServlet</servlet-name>
+        <url-pattern>/api/news/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

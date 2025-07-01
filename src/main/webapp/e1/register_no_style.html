@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<title>注册</title>
+</head>
+<body>
+<form action="/register" method="post">
+    <div>
+        <p>个人信息</p>
+    <label>用户名：<input type="text" name="username" required></label>
+<br>
+<label>密码：<input type="password" name="password" required></label>
+<br>
+性别：<label><input name="gender" type="radio" value="male">男</label>
+<label><input name="gender" type="radio" value="female">女</label>
+    <br>
+    <label>生日：<input id="birthday" type="date" name="birthday" required></label>
+<br>
+<label>籍贯：
+            <input list="province" name="hometown">
+<datalist id="province">
+    <option>哈尔滨</option>
+    <option>沈阳</option>
+    <option>长春</option>
+    </datalist>
+    </label>
+    <br>
+    <label>学历：
+            <select name="education">
+                <option></option>
+                <option>学士</option>
+                <option>硕士</option>
+                <option>博士</option>
+                </select>
+                </label>
+                </div>
+                <div>
+                <p>其他信息</p>
+                <label>喜欢的课程：</label>
+<ul>
+<li><label><input type="checkbox" name="courses" value="web">Web开发技术</label></li>
+<li><label><input type="checkbox" name="courses" value="java">Java程序设计</label></li>
+<li><label><input type="checkbox" name="courses" value="db">数据库原理</label></li>
+<li><label><input type="checkbox" name="courses" value="test">系统分析与测试</label></li>
+</ul>
+<label>照片：<input id="photo" type="file" accept=".jpg, .png" name="photo"></label>
+    </div>
+
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+    <button type="button" id="fillDefaults">填充默认值</button>
+    <button type="button"><a href="register.html">修饰后</a> </button>
+
+    </form>
+
+    <script>
+    document.getElementById('fillDefaults').addEventListener('click', function() {
+        // 获取表单元素
+        const form = document.querySelector('form');
+
+        // 设置用户名
+        form.querySelector('input[name="username"]').value = '2023211485';
+
+        // 设置密码
+        form.querySelector('input[name="password"]').value = '12345678';
+
+        // 设置性别为男
+        form.querySelector('input[name="gender"][value="male"]').checked = true;
+
+        // 设置生日 (注意：HTML日期格式为YYYY-MM-DD)
+        form.querySelector('input[name="birthday"]').value = '2005-04-21';
+
+        // 设置籍贯为哈尔滨
+        form.querySelector('input[name="hometown"]').value = '哈尔滨';
+
+        // 设置学历为博士
+        const educationSelect = form.querySelector('select[name="education"]');
+        educationSelect.value = '博士';
+
+        // 设置喜欢的课程
+        form.querySelector('input[name="courses"][value="web"]').checked = true;
+        form.querySelector('input[name="courses"][value="java"]').checked = true;
+        form.querySelector('input[name="courses"][value="db"]').checked = false;
+        form.querySelector('input[name="courses"][value="test"]').checked = false;
+    });
+</script>
+</body>
+</html>

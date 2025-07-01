@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>东北林业大学 软件工程专业</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons for comment section -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Animate on Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .dropdown-menu {
+            border-radius: 0.5rem;
+            border: none;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .carousel-item img {
+            height: 60vh;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: #343a40;
+        }
+        .card {
+            transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+            border: none;
+            border-radius: 0.75rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #0d6efd;
+        }
+        .ck-editor__editable {
+            min-height: 250px;
+        }
+        .teacher-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header & Navigation Bar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="images/LOGO.png" alt="NEFU 软件工程">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="exp.html">web课程实验</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home">网站首页</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">专业介绍</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#program/intro">专业简介</a></li>
+                            <li><a class="dropdown-item" href="#program/tracks">方向简介</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">实验室</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#labs/923">923创新实验室</a></li>
+                            <li><a class="dropdown-item" href="#labs/925">925移动开发实验室</a></li>
+                            <li><a class="dropdown-item" href="#labs/other">其他实验室</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#teachers">教师队伍</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#career">就业指南</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">新闻公告</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#news">新闻中心</a></li>
+                            <li><a class="dropdown-item" href="#announcements">通知公告</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#admin/login">后台管理</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content Area -->
+<main id="content-area" class="container my-5"></main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container text-center">
+        <p>© 2025 东北林业大学 软件工程专业. All Rights Reserved.</p>
+        <p>地址：黑龙江省哈尔滨市香坊区和兴路26号 | 邮编：150040</p>
+        <p>杨淳 2023211485 web课设</p>
+    </div>
+</footer>
+
+<!-- External JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
+<!-- Main Application Logic -->
+<script>
+    const API_BASE_URL = 'api';
+
+    const AppData = {
+        teachers: [
+            { id: 1, name: '李莉', rank: '教授', photo: 'images/teachers/professor_lili.png', description: '软件工程专业主任。研究方向：软件服务工程、数据挖掘与智能信息处理。' },
+            { id: 2, name: '邱兆文', rank: '教授', photo: 'images/teachers/professor_qiuzhaowen.jpeg', description: '国家高层次人才，博士生导师。研究方向：人工智能、虚拟现实。' },
+            { id: 3, name: '赵玉茗', rank: '教授', photo: 'images/teachers/professor_zhaoyuming.jpg', description: '博士生导师。研究方向：生物信息学、数据挖掘。' },
+            { id: 4, name: '边继龙', rank: '副教授', photo: 'images/teachers/associate_professor_bianjilong.png', description: '软件工程专业副主任。研究方向：计算机视觉、深度学习、生物信息学。' },
+            { id: 5, name: '张锡英', rank: '副教授', photo: 'images/teachers/associate_professor_zhangxiying.jpg', description: '硕士生导师。研究方向：现代信息技术及网络应用、数据库技术、图像检索。' },
+            { id: 6, name: '温雪岩', rank: '副教授', photo: 'images/teachers/associate_professor_wenxueyan.jpg', description: '软件工程专业领域负责人。研究方向：机器学习与深度学习、软件服务工程。' },
+            { id: 7, name: '刘丹', rank: '副教授', photo: 'images/teachers/associate_professor_liudan.jpg', description: '硕士生导师。研究方向：无线传感器网络、数据仓库、数据挖掘。' },
+            { id: 8, name: '王波', rank: '讲师', photo: 'images/teachers/lecturer_wangbo.jpg', description: '主要研究方向：计算数学、软件开发。' },
+            { id: 9, name: '李琰', rank: '讲师', photo: 'images/teachers/lecturer_liyan.jpg', description: '工学博士，硕士生导师。研究方向：深度学习、自然语言、智慧医疗。' },
+            { id: 10, name: '单颖', rank: '讲师', photo: 'images/teachers/lecturer_shanying.png', description: '博士。主要研究方向：软件工程，林业信息。' }
+        ],
+        news: {
+            async getAll() { try { const r = await fetch(`${API_BASE_URL}/news`); if (!r.ok) throw new Error('!ok'); return await r.json(); } catch (e) { console.error('Failed to fetch news:', e); return []; } },
+            async getById(id) { try { const r = await fetch(`${API_BASE_URL}/news/${id}`); if (!r.ok) throw new Error('!ok'); return await r.json(); } catch (e) { return null; } },
+            async add(item) { try { const r = await fetch(`${API_BASE_URL}/news`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(item) }); if (r.status === 401) { alert('请先登录!'); window.location.hash = '#admin/login'; } return r.ok; } catch (e) { return false; } },
+            async update(item) { try { const r = await fetch(`${API_BASE_URL}/news/${item.id}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(item) }); if (r.status === 401) { alert('请先登录!'); window.location.hash = '#admin/login'; } return r.ok; } catch (e) { return false; } },
+            async delete(id) { try { const r = await fetch(`${API_BASE_URL}/news/${id}`, { method: 'DELETE' }); if (r.status === 401) { alert('请先登录!'); window.location.hash = '#admin/login'; } return r.ok; } catch (e) { return false; } }
+        }
+    };
+
+    const templates = {
+        home: `
+            <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active"><img src="images/slide1.jpg" class="d-block w-100"><div class="carousel-caption d-none d-md-block">
+                    <h5>一流的教学环境</h5><p>我们提供现代化的教学设施，助力学生成长。</p></div></div>
+                    <div class="carousel-item"><img src="images/slide2.jpg" class="d-block w-100"><div class="carousel-caption d-none d-md-block">
+                    <h5>丰富的课外实践</h5><p>在各类科创竞赛中，我院学子屡获殊荣。</p></div></div>
+                    <div class="carousel-item"><img src="images/slide3.jpg" class="d-block w-100"><div class="carousel-caption d-none d-md-block">
+                    <h5>前沿的科研方向</h5><p>紧跟技术潮流，探索软件工程的无限可能。</p></div></div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+                <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            </div>
+            <div class="mt-5"><h2 class="section-title">快速入口</h2><div class="row text-center">
+            <div class="col-md-4 mb-4" data-aos="fade-up"><div class="card h-100"><div class="card-body d-flex flex-column">
+            <h5 class="card-title">专业介绍</h5><p class="card-text small text-muted">了解我们的培养目标、课程体系和专业特色。</p>
+            <a href="#program/intro" class="btn btn-primary mt-auto">查看详情</a></div></div></div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100"><div class="card h-100">
+            <div class="card-body d-flex flex-column"><h5 class="card-title">师资力量</h5>
+            <p class="card-text small text-muted">汇聚学界精英，拥有一支高水平的教师队伍。</p>
+            <a href="#teachers" class="btn btn-primary mt-auto">了解更多</a></div></div></div>
+            <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200"><div class="card h-100"><div class="card-body d-flex flex-column">
+            <h5 class="card-title">科研实验室</h5><p class="card-text small text-muted">先进的实验设备，为学生提供绝佳的实践平台。</p>
+            <a href="#labs/923" class="btn btn-primary mt-auto">探索实验室</a></div></div></div></div></div>
+            <div class="mt-5" data-aos="fade-up"><h2 class="section-title">新闻公告</h2><div class="card">
+            <div class="list-group list-group-flush" id="latest-news-list"></div></div></div>`,
+        program: (subpage) => {
+            const content = {
+                intro: {
+                    title: '专业简介',
+                    body: `<img src="images/general/program_intro.png" class="img-fluid rounded mb-4" alt="专业风采">
+                           <p class="lead">东北林业大学软件工程专业成立于2002年，是国家级一流本科专业建设点和黑龙江省重点专业，致力于培养具备国际视野、创新精神和卓越工程实践能力的复合型软件工程人才。</p>
+                           <p>本专业旨在培养学生系统地掌握计算科学基础理论、软件工程方法与技术，具备大中型软件系统的分析、设计、开发、测试和维护能力。我们强调“理论与实践并重，技术与人文融通”，构建了涵盖从编程基础、数据结构到高级软件架构、人工智能、大数据技术的全方位知识体系。</p>
+                           <p>通过与华为、阿里巴巴、字节跳动等国内外知名IT企业建立的深度产学研合作关系，我们为学生提供了丰富的实习、实训基地和就业机会，毕业生基础扎实、能力突出，深受用人单位好评。</p>`
+                },
+                tracks: {
+                    title: '方向简介',
+                    body: `<p class="text-center text-muted mb-4">本专业设置了多个特色鲜明、紧跟技术前沿的专业方向，学生可根据个人兴趣和职业规划进行选择。</p>
+                           <div class="accordion" id="tracksAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"><strong>Web与移动开发方向</strong></button></h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">该方向专注于现代Web应用和移动应用的设计、开发与运维。学生将深入学习前端技术（如HTML5/CSS3, React, Vue）、后端技术（如Java, SpringBoot, Node.js）、数据库技术（MySQL, Redis）以及跨平台开发框架（Flutter, React Native），全面培养具备前后端综合开发能力的“全栈工程师”。</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><strong>人工智能与大数据方向</strong></button></h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">该方向紧跟技术前沿，培养学生在人工智能和大数据领域的专业技能。核心课程包括机器学习、深度学习、自然语言处理、数据挖掘、推荐系统、分布式计算（Hadoop/Spark）等，旨在培养能够解决复杂数据问题的AI算法工程师和数据科学家，赋能各行各业的智能化转型。</div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"><strong>嵌入式与物联网方向</strong></button></h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">该方向关注软件与硬件的紧密结合，培养学生在嵌入式系统和物联网（IoT）领域的开发能力。学生将学习C/C++高级编程、操作系统原理、计算机组成、嵌入式Linux开发以及各种传感器和无线通信技术（Zigbee, LoRa, 5G），为智能家居、智能穿戴、工业自动化等领域输送具备软硬件综合能力的专业人才。</div>
+                                    </div>
+                                </div>
+                            </div>`
+                }
+            };
+            const current = content[subpage] || content['intro'];
+            return `<h1 class="section-title">${current.title}</h1>${current.body}`;
+        },
+        labs: (subpage) => {
+            const content = {
+                '923': { title: '923创新实验室', img: 'images/labs/lab_923.png', body: '<p class="lead">923创新实验室是学院主要的科技创新与竞赛孵化基地，被誉为“科创竞赛的摇篮”。</p><p>实验室配备了高性能工作站、VR/AR开发套件、机器人开发平台和3D打印设备，主要支持学生参加“互联网+”、“挑战杯”、“蓝桥杯”等顶级创新创业及学科竞赛。这里诞生了无数优秀项目，是学生将课堂所学转化为创新成果、提升工程实践能力的绝佳平台。</p>' },
+                '925': { title: '925移动开发实验室', img: 'images/labs/lab_925.png', body: '<p class="lead">925移动开发实验室专注于iOS和Android原生应用及跨平台应用的开发与研究。</p><p>实验室拥有多台iMac、MacBook Pro和各品牌主流测试手机，为学生提供了完整的移动开发、调试和测试环境。在这里，学生可以系统学习和实践最新的移动开发技术，将自己的创意开发成真实的应用发布上线，与市场接轨。</p>' },
+                'other': { title: '其他专业实验室', img: 'images/labs/lab_other.png', body: '<p class="lead">除特色实验室外，学院还建有多个支撑核心教学与科研的专业实验室。</p><p>其中包括**网络安全攻防实验室**，用于网络协议分析与信息安全实战演练；**大数据与云计算平台**，提供Hadoop和Spark集群环境，支持海量数据处理与分析；以及**虚拟现实（VR）实验室**，为学生提供沉浸式交互应用的开发与体验环境。这些实验室为相关课程提供了强大的实践支持，也为师生的前沿科研活动提供了坚实的基础。</p>' }
+            };
+            const current = content[subpage] || content['923'];
+            return `<h1 class="section-title">${current.title}</h1><img src="${current.img}" class="img-fluid rounded mb-4" alt="${current.title}">${current.body}`;
+        },
+        teachers: `<h1 class="section-title">教师队伍</h1><ul class="nav nav-pills justify-content-center mb-4" id="teacher-rank-filter"><li class="nav-item"><a class="nav-link active" href="#" data-rank="all">全部</a></li><li class="nav-item"><a class="nav-link" href="#" data-rank="教授">教授</a></li><li class="nav-item"><a class="nav-link" href="#" data-rank="副教授">副教授</a></li><li class="nav-item"><a class="nav-link" href="#" data-rank="讲师">讲师</a></li></ul><div class="row" id="teacher-list"></div>`,
+        career: `<h1 class="section-title">就业指南</h1>
+                 <div class="row align-items-center mb-5" data-aos="fade-right">
+                    <div class="col-md-6"><img src="images/general/career_prospects.jpg" class="img-fluid rounded" alt="就业前景"></div>
+                    <div class="col-md-6"><h3>广阔的就业前景</h3><p>软件工程专业作为信息时代的基石，是社会需求最旺盛、发展前景最广阔的专业之一。我们的毕业生凭借扎实的编程功底、规范的工程素养和出色的创新能力，广泛就职于国内外知名IT企业，从事软件开发、算法研究、系统测试、项目管理、数据分析等多种核心岗位，起薪水平和职业发展速度均位于行业前列。</p></div>
+                 </div>
+                 <div class="row align-items-center mb-5" data-aos="fade-left">
+                    <div class="col-md-6 order-md-2"><img src="images/general/career_partners.jpg" class="img-fluid rounded" alt="合作企业"></div>
+                    <div class="col-md-6 order-md-1"><h3>深入的校企合作</h3><p>我们与众多行业领军企业建立了长期稳定的战略合作关系，包括但不限于：</p><ul><li>华为（“智能基座”产教融合协同育人基地）</li><li>阿里巴巴（新工科人才培养计划）</li><li>字节跳动（技术创新俱乐部）</li><li>腾讯（犀牛鸟精英人才计划）</li><li>百度（AI人才联合培养项目）</li></ul><p>这些合作不仅为学生提供了丰富的实习机会和内推渠道，更将产业界的真实需求和最新技术融入日常教学，帮助学生实现从校园到职场的无缝衔接。</p></div>
+                 </div>
+                 <div class="row align-items-center" data-aos="fade-right">
+                    <div class="col-md-6"><img src="images/general/career_alumni.png" class="img-fluid rounded" alt="优秀校友"></div>
+                    <div class="col-md-6"><h3>杰出的校友网络</h3><p>我们培养了大量优秀的毕业生，他们遍布全球，在各自的领域取得了卓越的成就，成长为行业领袖、技术专家和成功的创业者。强大的校友网络是学院宝贵的财富，他们通过讲座、内推、项目合作等多种形式反哺母校，为在校生提供了宝贵的经验分享、职业指导和人脉资源，构筑了独特的竞争优势。</p></div>
+                 </div>`,
+        newsList: (type) => `<h1 class="section-title">${type === 'news' ? '新闻中心' : '通知公告'}</h1><div class="list-group" id="full-news-list"></div>`,
+        newsDetail: async (id) => {
+            const response = await AppData.news.getById(id);
+            if (!response) return `<div class="alert alert-warning text-center">无法加载新闻详情。</div>`;
+
+            const item = response.news;
+            const comments = response.comments;
+            const isAdmin = sessionStorage.getItem('isAdminLoggedIn') === 'true';
+
+            const imageHtml = item.coverImage ? `<img src="${item.coverImage}" class="img-fluid rounded mb-4 shadow-sm" alt="${item.title}">` : '';
+
+            let commentsHtml = comments.length > 0 ? comments.map(comment => `
+                <div class="d-flex mb-3" id="comment-${comment.id}">
+                    <div class="flex-shrink-0"><i class="bi bi-person-circle fs-3 text-secondary"></i></div>
+                    <div class="ms-3 w-100 border-bottom pb-2">
+                        <div class="d-flex justify-content-between">
+                            <strong>${comment.username}</strong>
+                            <div>
+                                <small class="text-muted me-3">${comment.createTime}</small>
+                                ${isAdmin ? `<button class="btn btn-sm btn-outline-danger delete-comment-btn" data-comment-id="${comment.id}"><i class="bi bi-trash"></i></button>` : ''}
+                            </div>
+                        </div>
+                        <p class="mb-1">${comment.content}</p>
+                        ${comment.imageUrl ? `<a href="${comment.imageUrl}" target="_blank"><img src="${comment.imageUrl}" style="max-height: 100px; border-radius: 0.25rem;" class="mt-1"></a>` : ''}
+                    </div>
+                </div>
+            `).join('') : '<p class="text-center text-muted p-3" id="no-comment-placeholder">暂无评论，快来抢沙发吧！</p>';
+
+            return `
+                <div class="card"><div class="card-body p-lg-5">
+                    ${imageHtml}
+                    <h2 class="card-title text-center mt-3">${item.title}</h2>
+                    <p class="text-center text-muted mb-4">发布时间：${item.create_time}</p><hr>
+                    <div class="mt-4">${item.content}</div>
+                </div></div>
+
+                <div class="card mt-4"><div class="card-body p-lg-4">
+                    <h4 class="mb-3"><i class="bi bi-pencil-square me-2"></i>发表评论</h4>
+                    <form id="comment-form" data-news-id="${item.id}">
+                        <div class="mb-3"><input type="text" class="form-control" id="comment-username" placeholder="你的昵称" required></div>
+                        <div class="mb-3"><textarea class="form-control" id="comment-content" rows="3" placeholder="说点什么吧..." required></textarea></div>
+                        <div class="mb-3"><input type="text" class="form-control" id="comment-image-url" placeholder="图片URL (选填，模拟上传)"></div>
+                        <button type="submit" class="btn btn-primary">提交评论</button>
+                    </form>
+                </div></div>
+
+                <div class="card mt-4"><div class="card-body p-lg-4">
+                    <h4 class="mb-3"><i class="bi bi-chat-dots-fill me-2"></i>全部评论 <span class="badge bg-secondary">${comments.length}</span></h4>
+                    <div id="comments-list">${commentsHtml}</div>
+                </div></div>
+            `;
+        },
+        adminLogin: `<div class="row justify-content-center"><div class="col-md-6 col-lg-4"><div class="card"><div class="card-body p-4"><h3 class="card-title text-center mb-4">后台管理登录</h3><form id="login-form"><div class="mb-3"><label for="username" class="form-label">用户名</label><input type="text" class="form-control" id="username" value="admin" required></div><div class="mb-3"><label for="password" class="form-label">密码</label><input type="password" class="form-control" id="password" value="admin" required></div><div class="d-grid"><button type="submit" class="btn btn-primary">登录</button></div><div id="login-error" class="text-danger mt-3 text-center" style="display:none;">用户名或密码错误</div></form></div></div></div></div>`,
+        adminDashboard: `<h1 class="section-title">后台管理</h1><div class="d-flex justify-content-between align-items-center mb-3"><h4>新闻公告列表（有富文本编辑提交功能）</h4><div><a href="#admin/edit/new" class="btn btn-primary">发布新信息</a><button id="logout-btn" class="btn btn-danger ms-2">退出登录</button></div></div><div class="table-responsive"><table class="table table-striped table-hover"><thead><tr><th>ID</th><th>标题</th><th>类型</th><th>发布时间</th><th>操作</th></tr></thead><tbody id="admin-news-table"></tbody></table></div>`,
+        adminEdit: async (id) => {
+            const isNew = id === 'new';
+            let item = {};
+            if (!isNew) {
+                const response = await AppData.news.getById(id);
+                item = response ? response.news : {};
+            }
+            if (!isNew && !item) return `<div class="alert alert-warning text-center">未找到该条信息。</div>`;
+            return `<h1 class="section-title">${isNew ? '发布新信息' : '编辑信息'}</h1><form id="edit-form" data-id="${isNew ? '' : item.id}"><div class="mb-3"><label for="edit-title" class="form-label">标题</label><input type="text" class="form-control" id="edit-title" value="${item.title || ''}" required></div><div class="mb-3"><label for="edit-cover-image" class="form-label">封面图URL</label><input type="text" class="form-control" id="edit-cover-image" value="${item.coverImage || ''}" placeholder="例如: images/news/my-pic.jpg"></div><div class="mb-3"><label for="edit-type" class="form-label">类型</label><select class="form-select" id="edit-type" required><option value="news" ${item.type === 'news' ? 'selected' : ''}>新闻</option><option value="announcement" ${item.type === 'announcement' ? 'selected' : ''}>公告</option></select></div><div class="mb-3"><label for="edit-content" class="form-label">内容</label><textarea id="edit-content">${item.content || ''}</textarea></div><div class="text-center"><button type="submit" class="btn btn-success">保存</button><a href="#admin/dashboard" class="btn btn-secondary ms-2">取消</a></div></form>`;
+        }
+    };
+
+    const contentArea = document.getElementById('content-area');
+    let editorInstance = null;
+
+    async function renderPage(hash) {
+        if (editorInstance) { editorInstance.destroy().catch(console.error); editorInstance = null; }
+        const [page, subpage, id] = (hash || '#home').substring(1).split('/');
+        if (page === 'admin' && subpage !== 'login' && sessionStorage.getItem('isAdminLoggedIn') !== 'true') { window.location.hash = '#admin/login'; return; }
+        let html = '';
+        try {
+            switch (page) {
+                case 'home': html = templates.home; break;
+                case 'program': html = templates.program(subpage); break;
+                case 'labs': html = templates.labs(subpage); break;
+                case 'teachers': html = templates.teachers; break;
+                case 'career': html = templates.career; break;
+                case 'news': html = templates.newsList('news'); break;
+                case 'announcements': html = templates.newsList('announcement'); break;
+                case 'news-detail': html = await templates.newsDetail(subpage); break;
+                case 'admin':
+                    if (subpage === 'login') html = templates.adminLogin;
+                    else if (subpage === 'dashboard') html = templates.adminDashboard;
+                    else if (subpage === 'edit') html = await templates.adminEdit(id);
+                    break;
+                default: window.location.hash = '#home'; html = templates.home;
+            }
+        } catch (error) {
+            console.error("Error rendering template:", page, subpage, error);
+            html = `<div class="alert alert-danger">页面渲染出错，请检查浏览器控制台。</div>`;
+        }
+        contentArea.innerHTML = html;
+        await runPageScript(page, subpage, id);
+        AOS.init({ once: true, duration: 600 });
+        updateNavLinks(window.location.hash || '#home');
+    }
+
+    function updateNavLinks(hash) {
+        document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .dropdown-toggle').forEach(link => link.classList.remove('active'));
+        const cleanHash = (hash.split('/')[0] || '#home');
+        const activeLink = document.querySelector(`.navbar-nav .nav-link[href="${cleanHash}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+            if (activeLink.closest('.dropdown')) {
+                activeLink.closest('.dropdown').querySelector('.dropdown-toggle').classList.add('active');
+            }
+        } else {
+            document.querySelector('.navbar-nav .nav-link[href="#home"]').classList.add('active');
+        }
+    }
+
+    async function runPageScript(page, subpage, id) {
+        switch (page) {
+            case 'home':
+            case 'news':
+            case 'announcements':
+                const isHomePage = page === 'home';
+                const newsData = await AppData.news.getAll();
+                let filteredNews = newsData;
+                if (!isHomePage) {
+                    const type = page === 'news' ? 'news' : 'announcement';
+                    filteredNews = newsData.filter(item => item.type === type);
+                }
+                const listData = isHomePage ? filteredNews.slice(0, 5) : filteredNews;
+                const listEl = document.getElementById(isHomePage ? 'latest-news-list' : 'full-news-list');
+
+                if (listEl) {
+                    listEl.innerHTML = listData.length > 0 ? listData.map(item => {
+                        const thumbHtml = item.coverImage ? `<img src="${item.coverImage}" class="me-3 rounded shadow-sm" style="width: 80px; height: 60px; object-fit: cover;">` : `<div class="me-3" style="width: 80px;"></div>`;
+                        return `
+                            <a href="#news-detail/${item.id}" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+                                ${thumbHtml}
+                                <div class="w-100">
+                                    <div class="d-flex w-100 justify-content-between">
+                                        <h6 class="mb-1">${item.title}</h6>
+                                        <small class="text-muted text-nowrap">${item.create_time}</small>
+                                    </div>
+                                    <small class="badge bg-${item.type === 'news' ? 'primary' : 'success'}">${item.type === 'news' ? '新闻' : '公告'}</small>
+                                </div>
+                            </a>`;
+                    }).join('') : '<p class="text-center p-3 text-muted">暂无内容</p>';
+                }
+                break;
+            case 'teachers':
+                const teacherListEl = document.getElementById('teacher-list');
+                const renderTeachers = (rank = 'all') => {
+                    const filteredTeachers = rank === 'all' ? AppData.teachers : AppData.teachers.filter(t => t.rank === rank);
+                    teacherListEl.innerHTML = filteredTeachers.map( t =>
+                        `<div class="col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
+                            <div class="card h-100 text-center" style="width: 18rem;">
+                                <div class="card-body d-flex flex-column align-items-center">
+                                    <img src="${t.photo}" alt="${t.name}" class="teacher-photo">
+                                    <h5 class="card-title mt-2">${t.name}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">${t.rank}</h6>
+                                    <p class="card-text small">${t.description}</p>
+                                </div>
+                            </div>
+                        </div>`
+                    ).join('');
+                };
+                renderTeachers();
+                document.getElementById('teacher-rank-filter').addEventListener('click', e => {
+                    e.preventDefault(); if (e.target.tagName === 'A') {
+                        document.querySelector('#teacher-rank-filter .active').classList.remove('active');
+                        e.target.classList.add('active'); renderTeachers(e.target.dataset.rank);
+                    }
+                });
+                break;
+            case 'news-detail':
+                document.getElementById('comment-form')?.addEventListener('submit', async e => {
+                    e.preventDefault();
+                    const form = e.target;
+                    const commentData = {
+                        newsId: parseInt(form.dataset.newsId),
+                        username: document.getElementById('comment-username').value,
+                        content: document.getElementById('comment-content').value,
+                        imageUrl: document.getElementById('comment-image-url').value
+                    };
+                    const response = await fetch(`${API_BASE_URL}/comments`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(commentData) });
+                    if(response.ok) {
+                        alert('评论成功！');
+                        window.location.reload();
+                    } else {
+                        alert('评论失败！');
+                    }
+                });
+                document.getElementById('comments-list')?.addEventListener('click', async e => {
+                    const deleteBtn = e.target.closest('.delete-comment-btn');
+                    if (deleteBtn) {
+                        if (confirm('确定要删除这条评论吗？')) {
+                            const commentId = deleteBtn.dataset.commentId;
+                            const response = await fetch(`${API_BASE_URL}/comments/${commentId}`, { method: 'DELETE' });
+                            if (response.ok) {
+                                document.getElementById(`comment-${commentId}`).remove();
+                            } else {
+                                alert('删除失败！请确认您已登录管理员账户。');
+                            }
+                        }
+                    }
+                });
+                break;
+            case 'admin':
+                if (subpage === 'login') {
+                    document.getElementById('login-form').addEventListener('submit', async e => {
+                        e.preventDefault();
+                        const username = document.getElementById('username').value;
+                        const password = document.getElementById('password').value;
+                        const response = await fetch(`${API_BASE_URL}/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username, password }) });
+                        if (response.ok) {
+                            sessionStorage.setItem('isAdminLoggedIn', 'true');
+                            window.location.hash = '#admin/dashboard';
+                        } else {
+                            document.getElementById('login-error').style.display = 'block';
+                        }
+                    });
+                } else if (subpage === 'dashboard') {
+                    const renderAdminTable = async () => {
+                        const tableBody = document.getElementById('admin-news-table');
+                        const data = await AppData.news.getAll();
+                        if (tableBody) { tableBody.innerHTML = data.map(item => `<tr><td>${item.id}</td><td>${item.title}</td><td>${item.type === 'news' ? '新闻' : '公告'}</td><td>${item.create_time}</td><td><a href="#admin/edit/${item.id}" class="btn btn-sm btn-warning">编辑</a> <button class="btn btn-sm btn-danger delete-btn" data-id="${item.id}">删除</button></td></tr>`).join(''); }
+                    };
+                    await renderAdminTable();
+                    document.getElementById('admin-news-table')?.addEventListener('click', async e => {
+                        if (e.target.classList.contains('delete-btn')) {
+                            if (confirm('确定要删除这条信息吗？')) {
+                                await AppData.news.delete(e.target.dataset.id);
+                                await renderAdminTable();
+                            }
+                        }
+                    });
+                    document.getElementById('logout-btn')?.addEventListener('click', () => {
+                        sessionStorage.removeItem('isAdminLoggedIn');
+                        window.location.hash = '#home';
+                    });
+                } else if (subpage === 'edit') {
+                    ClassicEditor.create(document.querySelector('#edit-content')).then(editor => { editorInstance = editor; }).catch(console.error);
+                    document.getElementById('edit-form')?.addEventListener('submit', async e => {
+                        e.preventDefault();
+                        const form = e.target;
+                        const itemId = form.dataset.id;
+                        const itemData = { title: document.getElementById('edit-title').value, type: document.getElementById('edit-type').value, content: editorInstance.getData(), coverImage: document.getElementById('edit-cover-image').value };
+                        if (itemId) {
+                            await AppData.news.update({ id: parseInt(itemId), ...itemData });
+                        } else {
+                            await AppData.news.add(itemData);
+                        }
+                        window.location.hash = '#admin/dashboard';
+                    });
+                }
+                break;
+        }
+    }
+
+    window.addEventListener('hashchange', () => renderPage(window.location.hash));
+    window.addEventListener('load', () => {
+        AOS.init({ once: true, duration: 600 });
+        renderPage(window.location.hash || '#home');
+    });
+</script>
+</body>
+</html>

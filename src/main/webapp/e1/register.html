@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="form-container">
+    <form action="/register" method="post">
+        <div class="form-group">
+            <label class="form-label">用户名：</label>
+            <input type="text" name="username" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">密码：</label>
+            <input type="password" name="password" class="form-control" required>
+        </div>
+
+        <div class="form-group radio-group">
+            <label class="form-label">性别：</label>
+            <div>
+                <label><input name="gender" type="radio" value="male"> 男</label>
+                <label><input name="gender" type="radio" value="female"> 女</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">生日：</label>
+            <input id="birthday" type="date" name="birthday" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">籍贯：</label>
+            <input list="province" name="hometown" class="form-control">
+            <datalist id="province">
+                <option>哈尔滨</option>
+                <option>沈阳</option>
+                <option>长春</option>
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">学历：</label>
+            <select name="education" class="form-control">
+                <option value="">请选择</option>
+                <option value="bachelor">学士</option>
+                <option value="master">硕士</option>
+                <option value="doctor">博士</option>
+            </select>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <label class="form-label">喜欢的课程：</label>
+            <ul>
+                <li><label><input type="checkbox" name="courses" value="web"> Web开发技术</label></li>
+                <li><label><input type="checkbox" name="courses" value="java"> Java程序设计</label></li>
+                <li><label><input type="checkbox" name="courses" value="db"> 数据库原理</label></li>
+                <li><label><input type="checkbox" name="courses" value="test"> 系统分析与测试</label></li>
+            </ul>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">照片：</label>
+            <input id="photo" type="file" accept=".jpg, .png" class="form-control">
+        </div>
+
+        <div class="button-group">
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+            <button type="button" id="fillDefaults">填充默认值</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('fillDefaults').addEventListener('click', function() {
+        const form = document.querySelector('form');
+        form.querySelector('input[name="username"]').value = '2023211485';
+        form.querySelector('input[name="password"]').value = '12345678';
+        form.querySelector('input[name="gender"][value="male"]').checked = true;
+        form.querySelector('input[name="birthday"]').value = '2005-04-21';
+        form.querySelector('input[name="hometown"]').value = '哈尔滨';
+        form.querySelector('select[name="education"]').value = 'doctor';
+        form.querySelectorAll('input[name="courses"]').forEach(checkbox => {
+            checkbox.checked = checkbox.value === 'web' || checkbox.value === 'java';
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册表单</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>学生注册表单</h1>
+
+<div>
+    <label>
+        <input type="checkbox" id="legal">我已阅读相关说明并遵守相关法律
+    </label>
+</div>
+<button type="button" id="test-button" disabled>自动填充</button>
+<form id="register">
+    <div>
+        <label for="username">用户名:</label>
+        <input type="text" id="username" name="username" placeholder="请输入用户名">
+    </div>
+
+    <div>
+        <label>未来意向：</label>
+        <label><input type="radio" name="purp" value="1">Java工程师</label>
+        <label><input type="radio" name="purp" value="2">测试工程师</label>
+        <label><input type="radio" name="purp" value="3">前端工程师</label>
+        <input type="hidden" name="purpose">
+    </div>
+
+    <div>
+        <label>请从以下课程中选择2项最喜欢的课程：</label>
+        <ul>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses" value="Web开发技术">Web开发技术
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses" value="软件项目管理">软件项目管理
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses" value="数据库原理">数据库原理
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" name="courses" value="系统分析与设计">系统分析与设计
+                </label>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <label>地址：</label>
+        <ul id="ul_address"></ul>
+        <input name="address" id="address-input">
+        <button type="button" id="button_address">添加地址</button>
+    </div>
+</form>
+<div>
+
+    <button type="submit" id="submit-button" disabled>提交表单</button>
+</div>
+
+<div id="result"></div>
+
+<script>
+    $(function () {
+        // 初始化
+        let registerForm = $("#register :input").prop("disabled", true);
+        let userNameValid = false;
+        let coursesValid = false;
+
+        // 用户名验证
+        $("input[name=username]").on('input', function() {
+            const val = $(this).val().trim();
+            userNameValid = val.length >= 6;
+            updateSubmitButton();
+        });
+
+        // 动态添加地址
+        $("#button_address").click(() => {
+            let input = $("input[name=address]");
+            let address = input.val().trim();
+
+            if (address) {
+                let item = $(`<li>${address}</li>`);
+                input.val("");
+                item.css("display", "none");
+                $("#ul_address").append(item);
+                item.fadeIn(500);
+            }
+        });
+
+
+
+        // 课程选择验证
+        const amount = 2;
+        const checkboxes = $("input[name=courses]");
+        function checkBoxs() {
+            let checked = checkboxes.filter(":checked");
+            let unChecked = checkboxes.not(":checked");
+            coursesValid = checked.length >= amount;
+            unChecked.prop("disabled", coursesValid);
+        }
+        checkboxes.click(function () {
+            checkBoxs()
+            updateSubmitButton();
+        });
+        $("#legal").click(function () {
+            let checked = checkboxes.filter(":checked");
+            let unChecked = checkboxes.not(":checked");
+            coursesValid = checked.length >= amount;
+            unChecked.prop("disabled", coursesValid);
+            const isChecked = $(this).prop("checked");
+            registerForm.not($("button")).prop("disabled", !isChecked);
+            isChecked && checkBoxs()
+            $("#test-button").prop("disabled", !isChecked);
+            updateSubmitButton();
+        });
+
+
+        // 更新提交按钮状态
+        function updateSubmitButton() {
+            const isLegalChecked = $("#legal").prop("checked");
+            const dis = !(isLegalChecked && userNameValid && coursesValid);
+            $("#submit-button").prop("disabled", dis);
+        }
+
+        // 未来意向单选按钮
+        let radios = $("input[name=purp]");
+        let hiddenInput = $("input[name=purpose]");
+        radios.click(function () {
+            if ($(this).val() === hiddenInput.val()) {
+                hiddenInput.val(0);
+                $(this).prop("checked", false);
+            } else {
+                hiddenInput.val($(this).val());
+            }
+        });
+
+        // 自动填充按钮
+        $("#test-button").click(function() {
+
+            // 设置用户名
+            $("input[name=username]").val('2023211485').trigger('input');
+
+            // 设置未来意向为Java工程师
+            $('input[name="purp"][value="1"]').click();
+            // 获取表单元素
+            const form = document.querySelector('form');
+            // 设置最喜欢的课程
+            form.querySelector('input[name="courses"][value="Web开发技术"]').checked = true;
+            form.querySelector('input[name="courses"][value="软件项目管理"]').checked = true;
+            form.querySelector('input[name="courses"][value="数据库原理"]').checked = false;
+            form.querySelector('input[name="courses"][value="系统分析与设计"]').checked = false;
+
+            // 设置地址并添加
+            $('input[name="address"]').val('黑龙江省哈尔滨市香坊区和兴路26号');
+            $("#button_address").click();
+
+            let checked = checkboxes.filter(":checked");
+            let unChecked = checkboxes.not(":checked");
+            coursesValid = checked.length >= amount;
+            unChecked.prop("disabled", coursesValid);
+            updateSubmitButton();
+        });
+
+        // 表单提交
+        $("#submit-button").click(function() {
+            const legalChecked = $("#legal").prop("checked");
+            const username = $('input[name="username"]').val();
+            const purposeValue = $('input[name="purpose"]').val();
+            let purposeText;
+
+            switch(purposeValue) {
+                case '1': purposeText = 'Java工程师'; break;
+                case '2': purposeText = '测试工程师'; break;
+                case '3': purposeText = '前端工程师'; break;
+                default: purposeText = '未选择';
+            }
+
+            // 获取选中的课程
+            const selectedCourses = [];
+            $('input[name="courses"]:checked').each(function() {
+                selectedCourses.push($(this).val());
+            });
+
+            // 获取地址列表
+            const addresses = [];
+            $("#ul_address li").each(function() {
+                addresses.push($(this).text());
+            });
+
+            const result = {
+                '同意协议': legalChecked ? '是' : '否',
+                '用户名': username,
+                '未来意向': purposeText,
+                '课程选择': selectedCourses,
+                '地址信息': addresses
+            };
+
+            const jsonString = JSON.stringify(result, null, 4);
+            $("#result").html('<pre>' + jsonString + '</pre>').show();
+        });
+    });
+</script>
+</body>
+</html>

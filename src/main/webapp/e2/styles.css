@@ -1,0 +1,85 @@
+/* 全局样式 */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    padding: 20px;
+}
+
+.main {
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 标题样式 */
+h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 8px;
+    margin-bottom: 1.5rem;
+}
+
+/* 说明文本样式 */
+p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* 警告文本样式（可复用 Bootstrap 风格） */
+p.warning {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    background-color: #fff;
+}
+
+/* 表头样式 */
+th {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* 表体行样式 */
+td {
+    border: 1px solid #e9ecef;
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* 交替行背景色 */
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* 链接样式（模拟 Bootstrap 按钮风格） */
+a {
+    color: #3498db;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+a:first-child {
+    margin-left: 0;
+}

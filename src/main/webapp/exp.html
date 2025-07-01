@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页面</title>
+    <style>
+        * {
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --hue: 223;
+            --bg: hsl(var(--hue), 90%, 95%);
+            --fg: hsl(var(--hue), 90%, 10%);
+            --primary: hsl(var(--hue), 90%, 50%);
+            --trans-dur: 0.3s;
+            font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font: 1em/1.5 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+            transition: background-color var(--trans-dur), color var(--trans-dur);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, hsl(223, 90%, 85%), hsl(223, 90%, 97%));
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin: 0 auto;
+        }
+        h1 {
+            color: hsl(223, 90%, 30%);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            color: hsl(223, 30%, 40%);
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .content {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .menu-container {
+            flex: 0 0 250px;
+            min-width: 400px;
+            max-width: 280px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+        .menu-title {
+            color: hsl(223, 90%, 30%);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid hsl(223, 90%, 90%);
+        }
+        .menu {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .menu-btn {
+            background: linear-gradient(to bottom, hsla(211, 66%, 45%, 0.95), hsla(213, 89%, 35%, 0.96));
+            color: white;
+            padding: 12px 18px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        .menu-btn::after {
+            content: "▼";
+            font-size: 0.8rem;
+            transition: transform 0.3s;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background: hsl(0, 0%, 20%);
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 12px 18px;
+            border-bottom: 1px solid hsl(0, 0%, 30%);
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        .menu:hover .dropdown-menu {
+            display: block;
+        }
+        .menu:hover .menu-btn::after {
+            transform: rotate(180deg);
+        }
+        .menu-btn:hover {
+            background: linear-gradient(to bottom, hsla(211, 66%, 45%, 0.95), hsla(213, 89%, 35%, 0.96));
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown-menu a:hover {
+            background: hsl(0, 0%, 95%);
+            color: hsl(220, 90%, 50%);
+        }
+        .iframe-container {
+            flex: 1;
+            min-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            min-height: 600px;
+            background-color: white; /* 添加白色背景 */
+        }
+        @media (max-width: 992px) {
+            .content {
+                flex-direction: column; /* 移动端堆叠布局 */
+            }
+            .menu-container {
+                flex: 1;
+                min-width: auto;
+                max-width: none;
+                margin-bottom: 25px;
+            }
+            .iframe-container {
+                min-width: auto;
+                min-height: 400px;
+            }
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            background-color: white; /* 取消iframe透明背景 */
+        }
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .loading-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .loading-text {
+            margin-top: 30px;
+            color: hsl(223, 90%, 30%);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        .status {
+            margin-top: 10px;
+            color: hsl(223, 30%, 50%);
+            font-size: 1.1rem;
+        }
+        .instructions {
+            background: hsl(218, 80%, 92%);
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 5px solid hsl(214, 80%, 50%);
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: hsl(216, 80%, 30%);
+            font-size: 1.4rem;
+        }
+        .instructions ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .info-panel h2 {
+            color: hsl(223, 90%, 30%);
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid hsl(223, 90%, 90%);
+        }
+
+        /* 动画关键帧 */
+        @keyframes pl1-a {
+            from { transform: rotate(0); }
+            80%, to {
+                animation-timing-function: steps(1,start);
+                transform: rotate(90deg);
+            }
+        }
+        @keyframes pl1-b {
+            from {
+                animation-timing-function: cubic-bezier(0.33,0,0.67,0);
+                width: 40px;
+                height: 40px;
+            }
+            20% {
+                animation-timing-function: steps(1,start);
+                width: 40px;
+                height: 0;
+            }
+            60% {
+                animation-timing-function: cubic-bezier(0.65,0,0.35,1);
+                width: 0;
+                height: 40px;
+            }
+            80%, to {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        @keyframes pl1-c {
+            from {
+                animation-timing-function: cubic-bezier(0.33,0,0.67,0);
+                width: 40px;
+                height: 40px;
+                transform: translate(0,48px);
+            }
+            20% {
+                animation-timing-function: cubic-bezier(0.33,1,0.67,1);
+                width: 40px;
+                height: 88px;
+                transform: translate(0,0);
+            }
+            40% {
+                animation-timing-function: cubic-bezier(0.33,0,0.67,0);
+                width: 40px;
+                height: 40px;
+                transform: translate(0,0);
+            }
+            60% {
+                animation-timing-function: cubic-bezier(0.33,1,0.67,1);
+                width: 88px;
+                height: 40px;
+                transform: translate(0,0);
+            }
+            80%, to {
+                width: 40px;
+                height: 40px;
+                transform: translate(48px,0);
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .pl1 {
+            display: block;
+            width: 8em;
+            height: 8em;
+        }
+        .pl1__g, .pl1__rect {
+            animation: pl1-a 1.5s cubic-bezier(0.65,0,0.35,1) infinite;
+        }
+        .pl1__g {
+            transform-origin: 64px 64px;
+        }
+        .pl1__rect:first-child {
+            animation-name: pl1-b;
+        }
+        .pl1__rect:nth-child(2) {
+            animation-name: pl1-c;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: hsl(223, 30%, 50%);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        .design-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: hsl(221, 73%, 33%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+
+        .design-btn:hover {
+            background-color: hsl(235, 89%, 56%);
+            transform: translateY(-2px); /* 轻微上浮效果 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .design-btn:active {
+            transform: translateY(0); /* 点击时恢复原位 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>WEB课程实验</h1>
+        <p class="subtitle">杨淳 2023211485</p>
+    </header>
+
+    <div class="content">
+        <div class="menu-container">
+            <div class="menu-title">项目菜单
+            <a href="index.html" class="design-btn">课程设计</a></div>
+            <div class="menu">
+                <button class='menu-btn'>
+                    实验项目
+                </button>
+                <div class="dropdown-menu">
+                    <a href="#" onclick="loadPage('e1/register_no_style.html', 'HTML基本标签实验')">实验一 HTML基本标签实验</a>
+                    <a href="#" onclick="loadPage('e2/table_no_style.html', 'CSS基本样式实验')">实验二 CSS基本样式实验</a>
+                    <a href="#" onclick="loadPage('e3/layout_no_style.html', 'CSS基本网页布局实验')">实验三 CSS基本样式实验</a>
+                    <a href="#" onclick="loadPage('e4/register_no_style.html', 'jQuery表单处理实验')">实验四 jQuery表单处理实验</a>
+                    <a href="#" onclick="loadPage('login', 'Servlet/Filter实验')">实验五 Servlet/Filter实验</a>
+                    <a href="#" onclick="loadPage('listteachers', 'EL/JSTL实验')">实验六 EL/JSTL实验</a>
+                    <a href="#" onclick="loadPage('e7/index', 'JDBC实验')">实验七 JDBC实验</a>
+                    <a href="#" onclick="loadPage('e8/index', 'MVC实验')">实验八 MVC实验</a>
+                    <a href="index.html" >课程设计</a>
+                </div>
+            </div>
+            <div class="instructions">
+                <h3>WEB课程实验</h3>
+                <ul>
+                    <li>点击上方菜单按钮展开项目列表</li>
+                    <li>实验一 HTML基本标签实验</li>
+                    <li>实验二 CSS基本样式实验</li>
+                    <li>实验三 CSS基本网页布局实验</li>
+                    <li>实验四 jQuery表单处理实验</li>
+                    <li>实验五 Servlet/Filter实验</li>
+                    <li>实验六 EL/JSTL实验</li>
+                    <li>实验七 JDBC实验</li>
+                    <li>实验八 MVC实验</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="iframe-container">
+            <div id="loadingOverlay" class="loading-overlay">
+                <svg class="pl1" viewBox="0 0 128 128" width="128px" height="128px">
+                    <defs>
+                        <linearGradient id="pl-grad" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#000" />
+                            <stop offset="100%" stop-color="#fff" />
+                        </linearGradient>
+                        <mask id="pl-mask">
+                            <rect x="0" y="0" width="128" height="128" fill="url(#pl-grad)" />
+                        </mask>
+                    </defs>
+                    <g fill="var(--primary)">
+                        <g class="pl1__g">
+                            <g transform="translate(20,20) rotate(0,44,44)">
+                                <g class="pl1__rect-g">
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" />
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" transform="translate(0,48)" />
+                                </g>
+                                <g class="pl1__rect-g" transform="rotate(180,44,44)">
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" />
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" transform="translate(0,48)" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g fill="hsl(343,90%,50%)" mask="url(#pl-mask)">
+                        <g class="pl1__g">
+                            <g transform="translate(20,20) rotate(0,44,44)">
+                                <g class="pl1__rect-g">
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" />
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" transform="translate(0,48)" />
+                                </g>
+                                <g class="pl1__rect-g" transform="rotate(180,44,44)">
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" />
+                                    <rect class="pl1__rect" rx="8" ry="8" width="40" height="40" transform="translate(0,48)" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <div class="loading-text">加载中，请稍候...</div>
+                <div id="statusText" class="status">正在初始化动画</div>
+            </div>
+            <iframe id="mainIframe" name="mainIframe" src="about:blank"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function loadPage(url, title) {
+            document.getElementById('statusText').textContent = `准备加载: ${title}`;
+
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            loadingOverlay.classList.add('active');
+
+            const animElement = document.querySelector('.pl1__g');
+
+            resetAnimation(animElement);
+
+            const handleAnimationIteration = () => {
+                document.getElementById('statusText').textContent = `正在跳转到: ${title}`;
+                document.getElementById('mainIframe').src = url;
+
+                animElement.removeEventListener('animationiteration', handleAnimationIteration);
+
+                setTimeout(() => {
+                    loadingOverlay.classList.remove('active');
+                }, 1000);
+            };
+
+            animElement.addEventListener('animationiteration', handleAnimationIteration);
+        }
+
+        function resetAnimation(element) {
+            element.style.animation = 'none';
+
+            void element.offsetWidth;
+
+            element.style.animation = '';
+
+            document.getElementById('statusText').textContent = '正在跳转';
+        }
+
+        window.addEventListener('load', function() {
+            document.getElementById('mainIframe').src = 'about:blank';
+            document.getElementById('statusText').textContent = '就绪，请选择项目';
+        });
+    </script>
+</div>
+</body>
+</html>

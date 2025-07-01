@@ -1,0 +1,139 @@
+/* 基础布局 */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 水平表单布局 */
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-label {
+    flex: 0 0 120px; /* 标签宽度 */
+    margin-right: 20px;
+    text-align: right; /* 右对齐 */
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.form-control {
+    flex: none;
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.2s;
+}
+@media (max-width: 600px) {
+    .form-control {
+        flex: 1;
+        width: auto;
+    }
+}
+.form-control:focus {
+    outline: none;
+    border-color: #007bff; /* Bootstrap 主色 */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15);
+}
+
+.radio-group,
+.checkbox-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.radio-group .form-label,
+.checkbox-group .form-label {
+    flex: 0 0 120px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.checkbox-group ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.checkbox-group li {
+    margin-bottom: 8px;
+}
+
+/* 按钮组 */
+.button-group {
+    margin-left: 140px;
+    margin-top: 25px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+
+button[type="reset"],
+button#fillDefaults {
+    background-color: #6c757d;
+    color: #fff;
+    margin-left: 10px;
+}
+
+button[type="reset"]:hover,
+button#fillDefaults:hover {
+    background-color: #5a6268;
+}
+
+/* 下拉菜单和日期选择器 */
+select.form-control {
+    appearance: auto;
+    padding-right: 30px; /* 预留箭头空间 */
+}
+
+/* 响应式调整 */
+@media (max-width: 600px) {
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-label {
+        flex: none;
+        width: 100%;
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .button-group {
+        margin-left: 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>东北林业大学 软件工程专业</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Animate on Scroll Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+    .navbar-brand img {
+      height: 40px;
+    }
+    .dropdown-menu {
+      border-radius: 0.5rem;
+      border: none;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    }
+    .carousel-item img {
+      height: 60vh;
+      object-fit: cover;
+    }
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 0.5rem;
+      padding: 1rem;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      color: #343a40;
+    }
+    .card {
+      transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+      border: none;
+      border-radius: 0.75rem;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 2rem 0;
+    }
+    .teacher-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    }
+    .nav-pills .nav-link.active {
+      background-color: #0d6efd;
+    }
+    .news-item {
+      border-bottom: 1px solid #eee;
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .ck-editor__editable {
+      min-height: 250px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header & Navigation Bar -->
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <img src="https://placehold.co/200x50/003366/FFFFFF?text=NEFU+软件工程" alt="NEFU Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">网站首页</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="programDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              专业介绍
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="programDropdown">
+              <li><a class="dropdown-item" href="#program/intro">专业简介</a></li>
+              <li><a class="dropdown-item" href="#program/tracks">方向简介</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="labsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              实验室
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="labsDropdown">
+              <li><a class="dropdown-item" href="#labs/923">923创新实验室</a></li>
+              <li><a class="dropdown-item" href="#labs/925">925移动开发实验室</a></li>
+              <li><a class="dropdown-item" href="#labs/other">其他实验室</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#teachers">教师队伍</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#career">就业指南</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              新闻公告
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+              <li><a class="dropdown-item" href="#news">新闻中心</a></li>
+              <li><a class="dropdown-item" href="#announcements">通知公告</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#admin/login">后台管理</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Main Content Area -->
+<main id="content-area" class="container my-5">
+  <!-- Content will be loaded here by JavaScript Router -->
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container text-center">
+    <p>&copy; 2025 东北林业大学 软件工程专业. All Rights Reserved.</p>
+    <p>地址：黑龙江省哈尔滨市香坊区和兴路26号 | 邮编：150040</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Animate on Scroll Library JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- CKEditor 5 -->
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
+<!-- Main Application Logic -->
+<script>
+  // --- SIMULATED DATABASE & STATIC DATA --- //
+  const AppData = {
+    // Static data for teachers. In a real app, this would come from a database.
+    teachers: [
+      { id: 1, name: '张三', rank: '教授', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=教授', description: '博士生导师，研究方向为人工智能、数据挖掘。发表过多篇顶级期刊论文，主持多个国家级科研项目。教学经验丰富，深受学生喜爱。' },
+      { id: 2, name: '李四', rank: '教授', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=教授', description: '主要研究领域为软件工程与项目管理。拥有丰富的企业合作经验，致力于将前沿的工程方法引入教学实践中。' },
+      { id: 3, name: '王五', rank: '副教授', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=副教授', description: '研究方向为移动应用开发与人机交互。开发的多个App在应用商店获得好评。课堂生动有趣，注重培养学生的动手能力。' },
+      { id: 4, name: '赵六', rank: '副教授', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=副教授', description: '专注于Web技术和云计算领域。对前后端技术有深入研究，指导学生在各类Web开发竞赛中屡获佳绩。' },
+      { id: 5, name: '孙七', rank: '讲师', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=讲师', description: '主要负责C++程序设计、数据结构等基础课程的教学。教学严谨，逻辑清晰，为学生打下坚实的编程基础。' },
+      { id: 6, name: '周八', rank: '讲师', photo: 'https://placehold.co/120x120/EFEFEF/AAAAAA&text=讲师', description: '研究方向为计算机网络与信息安全。拥有网络工程师认证，实践经验丰富，能够将复杂的网络协议讲解得通俗易懂。' }
+    ],
+    // Function to manage news data using localStorage for persistence
+    news: {
+      _key: 'nefu_news_data',
+      // Initialize with some mock data if localStorage is empty
+      _initialize: function() {
+        if (!localStorage.getItem(this._key)) {
+          const mockData = [
+            { id: 1, title: '我院学生在“蓝桥杯”大赛中再创佳绩', content: '<h3>热烈祝贺！</h3><p>在刚刚结束的第十五届“蓝桥杯”全国软件和信息技术专业人才大赛中，我院学子表现出色，荣获多项国家级奖项。这充分展示了我院在培养高水平软件人才方面的卓越成果。</p><p>参赛队伍在指导老师的精心辅导下，经过数月的紧张备赛，最终在众多高校中脱颖而出。他们的成功不仅是个人的荣誉，更是学院教学质量的体现。</p>', type: 'news', create_time: '2025-06-15' },
+            { id: 2, title: '软件工程专业2025年招生简章发布', content: '<p>东北林业大学软件工程专业2025年本科招生简章现已正式发布。本专业旨在培养具有国际视野和创新能力的复合型软件工程人才，欢迎广大考生踊跃报考。</p>', type: 'news', create_time: '2025-06-10' },
+            { id: 3, title: '关于2025-2026学年第一学期选课的通知', content: '<p>全体本科生：2025-2026学年第一学期的选课工作将于下周一开始，请同学们仔细阅读选课指南，按时完成选课。详情请登录教务系统查看。</p>', type: 'announcement', create_time: '2025-06-20' },
+            { id: 4, title: '学院举办“AI前沿技术”学术讲座', content: '<p>为拓宽学生视野，学院特邀业界知名AI专家前来举办学术讲座，主题为“生成式AI的未来与挑战”。讲座将于本周五下午在科技楼报告厅举行，欢迎全院师生参加。</p>', type: 'news', create_time: '2025-06-05' },
+            { id: 5, title: '关于暑假期间实验室开放的安排', content: '<p>为支持同学们的科研和竞赛活动，暑假期间部分实验室将继续开放。需要使用实验室的同学请提前向管理员提交申请。具体开放时间和申请流程请见附件。</p>', type: 'announcement', create_time: '2025-06-18' },
+            { id: 6, title: '我院与知名IT企业签订校企合作协议', content: '<p>近日，我院与国内顶尖IT企业正式签署战略合作协议。双方将在人才培养、项目研发、实习就业等方面展开深度合作，为学生提供更多实践机会和发展平台。</p>', type: 'news', create_time: '2025-05-28' },
+          ];
+          localStorage.setItem(this._key, JSON.stringify(mockData));
+        }
+      },
+      getAll: function() {
+        this._initialize();
+        return JSON.parse(localStorage.getItem(this._key)).sort((a, b) => new Date(b.create_time) - new Date(a.create_time));
+      },
+      getById: function(id) {
+        return this.getAll().find(item => item.id === parseInt(id));
+      },
+      add: function(item) {
+        const data = this.getAll();
+        const newItem = {
+          ...item,
+          id: data.length > 0 ? Math.max(...data.map(i => i.id)) + 1 : 1,
+          create_time: new Date().toISOString().slice(0, 10)
+        };
+        data.push(newItem);
+        localStorage.setItem(this._key, JSON.stringify(data));
+      },
+      update: function(updatedItem) {
+        let data = this.getAll();
+        data = data.map(item => item.id === updatedItem.id ? { ...item, ...updatedItem } : item);
+        localStorage.setItem(this._key, JSON.stringify(data));
+      },
+      delete: function(id) {
+        let data = this.getAll();
+        data = data.filter(item => item.id !== parseInt(id));
+        localStorage.setItem(this._key, JSON.stringify(data));
+      }
+    }
+  };
+
+  // --- PAGE TEMPLATES --- //
+  const templates = {
+    home: `
+                <!-- Carousel -->
+                <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                            <img src="https://placehold.co/1920x700/003366/FFFFFF?text=校园风光" class="d-block w-100" alt="校园风光">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>一流的教学环境</h5>
+                                <p>我们提供现代化的教学设施，助力学生成长。</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1920x700/3498db/FFFFFF?text=学生活动" class="d-block w-100" alt="学生活动">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>丰富的课外实践</h5>
+                                <p>在各类科创竞赛中，我院学子屡获殊荣。</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://placehold.co/1920x700/2c3e50/FFFFFF?text=科研成果" class="d-block w-100" alt="科研成果">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>前沿的科研方向</h5>
+                                <p>紧跟技术潮流，探索软件工程的无限可能。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+                <!-- Main Sections -->
+                <div class="container mt-5">
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-4" data-aos="fade-up">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">专业介绍</h5>
+                                    <p class="card-text">了解我们的培养目标、课程体系和专业特色。</p>
+                                    <a href="#program/intro" class="btn btn-primary">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">师资力量</h5>
+                                    <p class="card-text">汇聚学界精英，拥有一支高水平的教师队伍。</p>
+                                    <a href="#teachers" class="btn btn-primary">了解更多</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">科研实验室</h5>
+                                    <p class="card-text">先进的实验设备，为学生提供绝佳的实践平台。</p>
+                                    <a href="#labs/923" class="btn btn-primary">探索实验室</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest News & Announcements -->
+                <div class="mt-5" data-aos="fade-up">
+                    <h2 class="section-title">新闻公告</h2>
+                    <div class="card">
+                        <div class="list-group list-group-flush" id="latest-news-list">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+                </div>
+            `,
+    program: (subpage) => {
+      const content = {
+        intro: {
+          title: '专业简介',
+          body: `
+                            <img src="https://placehold.co/800x400/5dade2/FFFFFF?text=专业风采" class="img-fluid rounded mb-4" alt="专业风采">
+                            <p>东北林业大学软件工程专业成立于2002年，是国家级一流本科专业建设点。本专业致力于培养德、智、体、美、劳全面发展，掌握自然科学和人文社科基础知识，掌握计算科学基础理论、软件工程专业的基础知识和基本技能，具有软件开发能力以及软件开发实践的初步经验和项目组织的基本能力，能适应技术进步和社会需求变化的高素质复合型软件工程技术、管理人才。</p>
+                            <p>我们注重理论与实践相结合，构建了完善的课程体系，涵盖了从基础编程、数据结构到高级软件架构、人工智能、大数据技术的全方位知识。通过与国内外知名IT企业深度合作，我们为学生提供了丰富的实习和就业机会，毕业生深受用人单位好评。</p>
+                        `
+        },
+        tracks: {
+          title: '方向简介',
+          body: `
+                            <div class="accordion" id="tracksAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <strong>Web与移动开发方向</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            该方向专注于现代Web应用和移动应用的设计与开发。学生将学习前端技术（HTML, CSS, JavaScript, React/Vue）、后端技术（Java, Python, Node.js）、数据库技术以及跨平台开发框架（React Native, Flutter），培养全栈开发能力。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            <strong>人工智能与大数据方向</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            该方向紧跟技术前沿，培养学生在人工智能和大数据领域的专业技能。课程包括机器学习、深度学习、自然语言处理、数据挖掘、分布式计算（Hadoop/Spark）等，旨在培养能够解决复杂数据问题的AI工程师和数据科学家。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            <strong>嵌入式与物联网方向</strong>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tracksAccordion">
+                                        <div class="accordion-body">
+                                            该方向关注软件与硬件的结合，培养学生在嵌入式系统和物联网（IoT）领域的开发能力。学生将学习C/C++、操作系统原理、计算机组成、嵌入式Linux开发以及各种传感器和通信技术，为智能家居、智能穿戴等领域输送人才。
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `
+        }
+      };
+      const current = content[subpage] || content['intro'];
+      return `<h1 class="section-title">${current.title}</h1>${current.body}`;
+    },
+    labs: (subpage) => {
+      const content = {
+        '923': {
+          title: '923创新实验室',
+          img: 'https://placehold.co/800x400/1abc9c/FFFFFF?text=923创新实验室',
+          body: '<p>923创新实验室是学院主要的科创竞赛基地。实验室配备了高性能计算机、VR设备和机器人套件，主要支持学生参加“互联网+”、“挑战杯”等创新创业大赛。这里诞生了无数优秀项目，是创新思想的摇篮。</p>'
+        },
+        '925': {
+          title: '925移动开发实验室',
+          img: 'https://placehold.co/800x400/e67e22/FFFFFF?text=925移动开发实验室',
+          body: '<p>925移动开发实验室专注于iOS和Android原生应用开发。实验室拥有多台Mac和各品牌测试手机，为学生提供了完整的移动开发和测试环境。学生在这里可以学习和实践最新的移动开发技术，将创意变为现实。</p>'
+        },
+        'other': {
+          title: '其他实验室',
+          img: 'https://placehold.co/800x400/9b59b6/FFFFFF?text=其他实验室',
+          body: '<p>学院还设有网络安全实验室、大数据分析平台等多个专业实验室，覆盖了软件工程的各个重要领域。这些实验室为相关课程提供了强大的实践支持，也为师生的科研活动提供了坚实的基础。</p>'
+        }
+      };
+      const current = content[subpage] || content['923'];
+      return `
+                    <h1 class="section-title">${current.title}</h1>
+                    <img src="${current.img}" class="img-fluid rounded mb-4" alt="${current.title}">
+                    ${current.body}
+                `;
+    },
+    teachers: `
+                <h1 class="section-title">教师队伍</h1>
+                <ul class="nav nav-pills justify-content-center mb-4" id="teacher-rank-filter">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-rank="all">全部</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-rank="教授">教授</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-rank="副教授">副教授</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-rank="讲师">讲师</a></li>
+                </ul>
+                <div class="row" id="teacher-list">
+                    <!-- JS will populate this -->
+                </div>
+            `,
+    career: `
+                <h1 class="section-title">就业指南</h1>
+                <div class="row align-items-center">
+                    <div class="col-md-6" data-aos="fade-right">
+                         <img src="https://placehold.co/600x400/3498db/FFFFFF?text=就业前景" class="img-fluid rounded" alt="就业前景">
+                    </div>
+                    <div class="col-md-6" data-aos="fade-left">
+                        <h3>广阔的就业前景</h3>
+                        <p>软件工程专业是信息时代的核心专业，毕业生就业市场广阔，需求旺盛。我们的毕业生广泛就职于国内外知名IT企业，如华为、阿里巴巴、腾讯、字节跳动等，从事软件开发、测试、项目管理、数据分析等多种岗位。</p>
+                        <p>学院与多家企业建立了紧密的合作关系，为学生提供丰富的实习机会和内推渠道，帮助学生顺利从校园走向职场。</p>
+                    </div>
+                </div>
+                <div class="row align-items-center mt-5">
+                     <div class="col-md-6 order-md-2" data-aos="fade-left">
+                         <img src="https://placehold.co/600x400/2ecc71/FFFFFF?text=优秀校友" class="img-fluid rounded" alt="优秀校友">
+                    </div>
+                    <div class="col-md-6 order-md-1" data-aos="fade-right">
+                        <h3>杰出的校友网络</h3>
+                        <p>我们培养了大量优秀的毕业生，他们在各自的领域取得了卓越的成就，成为了行业领袖和技术专家。强大的校友网络是学院宝贵的财富，他们为在校生提供了宝贵的经验分享、职业指导和人脉资源。</p>
+                    </div>
+                </div>
+            `,
+    newsList: (type) => `
+                <h1 class="section-title">${type === 'news' ? '新闻中心' : '通知公告'}</h1>
+                <div class="list-group" id="full-news-list">
+                    <!-- JS will populate this -->
+                </div>
+            `,
+    newsDetail: (id) => {
+      const item = AppData.news.getById(id);
+      if (!item) return `<p class="text-center">未找到该条信息。</p>`;
+      return `
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">${item.title}</h2>
+                            <p class="text-center text-muted mb-4">发布时间：${item.create_time}</p>
+                            <hr>
+                            <div class="mt-4">${item.content}</div>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="#${item.type === 'news' ? 'news' : 'announcements'}" class="btn btn-secondary">返回列表</a>
+                        </div>
+                    </div>
+                `;
+    },
+    adminLogin: `
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card">
+                            <div class="card-body p-4">
+                                <h3 class="card-title text-center mb-4">后台管理登录</h3>
+                                <form id="login-form">
+                                    <div class="mb-3">
+                                        <label for="username" class="form-label">用户名</label>
+                                        <input type="text" class="form-control" id="username" value="admin" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password" class="form-label">密码</label>
+                                        <input type="password" class="form-control" id="password" value="admin" required>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary">登录</button>
+                                    </div>
+                                    <div id="login-error" class="text-danger mt-3 text-center" style="display:none;">用户名或密码错误</div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `,
+    adminDashboard: `
+                <h1 class="section-title">后台管理</h1>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4>新闻公告列表</h4>
+                    <div>
+                        <a href="#admin/edit/new" class="btn btn-primary">发布新信息</a>
+                        <button id="logout-btn" class="btn btn-danger">退出登录</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>类型</th>
+                                <th>发布时间</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-news-table">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+            `,
+    adminEdit: (id) => {
+      const isNew = id === 'new';
+      const item = isNew ? {} : AppData.news.getById(id);
+      if (!isNew && !item) return `<p class="text-center">未找到该条信息。</p>`;
+
+      return `
+                    <h1 class="section-title">${isNew ? '发布新信息' : '编辑信息'}</h1>
+                    <form id="edit-form" data-id="${isNew ? '' : item.id}">
+                        <div class="mb-3">
+                            <label for="edit-title" class="form-label">标题</label>
+                            <input type="text" class="form-control" id="edit-title" value="${item.title || ''}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-type" class="form-label">类型</label>
+                            <select class="form-select" id="edit-type" required>
+                                <option value="news" ${item.type === 'news' ? 'selected' : ''}>新闻</option>
+                                <option value="announcement" ${item.type === 'announcement' ? 'selected' : ''}>公告</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="edit-content" class="form-label">内容</label>
+                            <textarea id="edit-content">${item.content || ''}</textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success">保存</button>
+                            <a href="#admin/dashboard" class="btn btn-secondary">取消</a>
+                        </div>
+                    </form>
+                `;
+    }
+  };
+
+  // --- ROUTER & PAGE RENDERING LOGIC --- //
+  const contentArea = document.getElementById('content-area');
+  let editorInstance = null; // To hold CKEditor instance
+
+  function renderPage(hash) {
+    // Cleanup previous page's resources if any
+    if (editorInstance) {
+      editorInstance.destroy().catch(error => console.error(error));
+      editorInstance = null;
+    }
+
+    const [page, subpage, id] = hash.substring(1).split('/');
+
+    // Authentication check for admin pages
+    if (page === 'admin' && subpage !== 'login') {
+      if (sessionStorage.getItem('isAdminLoggedIn') !== 'true') {
+        window.location.hash = '#admin/login';
+        return;
+      }
+    }
+
+    let html = '';
+    switch(page) {
+      case 'home':
+        html = templates.home;
+        break;
+      case 'program':
+        html = templates.program(subpage);
+        break;
+      case 'labs':
+        html = templates.labs(subpage);
+        break;
+      case 'teachers':
+        html = templates.teachers;
+        break;
+      case 'career':
+        html = templates.career;
+        break;
+      case 'news':
+        html = templates.newsList('news');
+        break;
+      case 'announcements':
+        html = templates.newsList('announcement');
+        break;
+      case 'news-detail':
+        html = templates.newsDetail(subpage);
+        break;
+      case 'admin':
+        if (subpage === 'login') html = templates.adminLogin;
+        else if (subpage === 'dashboard') html = templates.adminDashboard;
+        else if (subpage === 'edit') html = templates.adminEdit(id);
+        break;
+      default:
+        html = templates.home;
+    }
+    contentArea.innerHTML = html;
+
+    // Post-render actions (like populating lists, attaching events)
+    runPageScript(page, subpage, id);
+
+    // Re-initialize AOS for animations on new content
+    AOS.init({ once: true, duration: 600 });
+
+    // Update active nav link
+    updateNavLinks(hash);
+  }
+
+  function updateNavLinks(hash) {
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.classList.remove('active');
+      const linkHash = link.getAttribute('href');
+      if (linkHash === hash || (hash.startsWith(linkHash) && linkHash !== '#')) {
+        link.classList.add('active');
+      }
+    });
+    // Handle dropdown active state
+    const activeLink = document.querySelector('.navbar-nav .nav-link.active');
+    if (activeLink && activeLink.closest('.dropdown-menu')) {
+      activeLink.closest('.dropdown').querySelector('.dropdown-toggle').classList.add('active');
+    }
+  }
+
+  // Scripts to run after a page is rendered
+  function runPageScript(page, subpage, id) {
+    switch(page) {
+      case 'home':
+        const latestNews = AppData.news.getAll().slice(0, 5);
+        const newsListEl = document.getElementById('latest-news-list');
+        newsListEl.innerHTML = latestNews.map(item => `
+                        <a href="#news-detail/${item.id}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">${item.title}</h6>
+                                <small class="text-muted">${item.create_time}</small>
+                            </div>
+                            <small class="badge bg-${item.type === 'news' ? 'primary' : 'info'}">${item.type === 'news' ? '新闻' : '公告'}</small>
+                        </a>
+                    `).join('');
+        break;
+      case 'teachers':
+        const teacherListEl = document.getElementById('teacher-list');
+        const renderTeachers = (rank = 'all') => {
+          const filteredTeachers = rank === 'all'
+                  ? AppData.teachers
+                  : AppData.teachers.filter(t => t.rank === rank);
+          teacherListEl.innerHTML = filteredTeachers.map(t => `
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100 text-center">
+                                    <div class="card-body">
+                                        <img src="${t.photo}" alt="${t.name}" class="teacher-card img-thumbnail mx-auto d-block mb-3">
+                                        <h5 class="card-title">${t.name}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">${t.rank}</h6>
+                                        <p class="card-text">${t.description.substring(0, 50)}...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('');
+        };
+        renderTeachers();
+        document.getElementById('teacher-rank-filter').addEventListener('click', e => {
+          e.preventDefault();
+          if (e.target.tagName === 'A') {
+            document.querySelector('#teacher-rank-filter .active').classList.remove('active');
+            e.target.classList.add('active');
+            renderTeachers(e.target.dataset.rank);
+          }
+        });
+        break;
+      case 'news':
+      case 'announcements':
+        const type = page === 'news' ? 'news' : 'announcement';
+        const fullNewsList = AppData.news.getAll().filter(item => item.type === type);
+        const fullNewsListEl = document.getElementById('full-news-list');
+        fullNewsListEl.innerHTML = fullNewsList.map(item => `
+                        <a href="#news-detail/${item.id}" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">${item.title}</h5>
+                                <small>${item.create_time}</small>
+                            </div>
+                        </a>
+                    `).join('');
+        break;
+      case 'admin':
+        if (subpage === 'login') {
+          document.getElementById('login-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            if (user === 'admin' && pass === 'admin') {
+              sessionStorage.setItem('isAdminLoggedIn', 'true');
+              window.location.hash = '#admin/dashboard';
+            } else {
+              document.getElementById('login-error').style.display = 'block';
+            }
+          });
+        } else if (subpage === 'dashboard') {
+          const renderAdminTable = () => {
+            const tableBody = document.getElementById('admin-news-table');
+            tableBody.innerHTML = AppData.news.getAll().map(item => `
+                                <tr>
+                                    <td>${item.id}</td>
+                                    <td>${item.title}</td>
+                                    <td>${item.type === 'news' ? '新闻' : '公告'}</td>
+                                    <td>${item.create_time}</td>
+                                    <td>
+                                        <a href="#admin/edit/${item.id}" class="btn btn-sm btn-warning">编辑</a>
+                                        <button class="btn btn-sm btn-danger delete-btn" data-id="${item.id}">删除</button>
+                                    </td>
+                                </tr>
+                            `).join('');
+          };
+          renderAdminTable();
+          document.getElementById('admin-news-table').addEventListener('click', e => {
+            if (e.target.classList.contains('delete-btn')) {
+              if (confirm('确定要删除这条信息吗？')) {
+                const idToDelete = e.target.dataset.id;
+                AppData.news.delete(idToDelete);
+                renderAdminTable(); // Re-render table
+              }
+            }
+          });
+          document.getElementById('logout-btn').addEventListener('click', () => {
+            sessionStorage.removeItem('isAdminLoggedIn');
+            window.location.hash = '#home';
+          });
+        } else if (subpage === 'edit') {
+          // Initialize CKEditor
+          ClassicEditor
+                  .create(document.querySelector('#edit-content'))
+                  .then(editor => {
+                    editorInstance = editor;
+                  })
+                  .catch(error => {
+                    console.error(error);
+                  });
+
+          document.getElementById('edit-form').addEventListener('submit', e => {
+            e.preventDefault();
+            const form = e.target;
+            const itemId = form.dataset.id;
+            const itemData = {
+              title: document.getElementById('edit-title').value,
+              type: document.getElementById('edit-type').value,
+              content: editorInstance.getData()
+            };
+
+            if (itemId) { // Update existing
+              AppData.news.update({ id: parseInt(itemId), ...itemData });
+            } else { // Add new
+              AppData.news.add(itemData);
+            }
+            window.location.hash = '#admin/dashboard';
+          });
+        }
+        break;
+    }
+  }
+
+  // --- INITIALIZATION --- //
+  window.addEventListener('hashchange', () => renderPage(window.location.hash));
+  window.addEventListener('load', () => {
+    AOS.init({ once: true, duration: 600 });
+    renderPage(window.location.hash || '#home');
+  });
+
+</script>
+</body>
+</html>
